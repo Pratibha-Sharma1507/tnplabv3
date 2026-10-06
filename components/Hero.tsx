@@ -24,6 +24,15 @@ export default function Hero() {
             Comprehensive training, real-world projects, and placement support designed to turn learning into outcomes.
           </p>
 
+          <div className="placement-guarantee mt-5 inline-flex max-w-full items-center gap-2.5 rounded-full border border-sky-300/25 bg-[#0F2E59]/65 px-3.5 py-2 text-[0.72rem] font-semibold text-sky-50 shadow-[0_0_22px_rgba(56,189,248,0.12)] backdrop-blur-sm sm:mt-6 sm:text-sm">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-400/15 ring-1 ring-sky-300/35">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="m3.5 8.2 2.8 2.7 6.2-6" stroke="#7DD3FC" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </span>
+            <span>100% Placement Guarantee</span>
+          </div>
+
           <div className="home-enter home-enter-delay-3 mt-7 flex flex-wrap items-center gap-3 sm:gap-4">
             <a href="#contact" className="btn-primary">
               Book a free counseling call
