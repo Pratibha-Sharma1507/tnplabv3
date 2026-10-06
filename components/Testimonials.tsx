@@ -24,16 +24,16 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="px-4 py-20 sm:px-6 lg:px-8">
+    <section id="testimonials" className="px-4 pb-20 pt-12 sm:px-6 sm:pt-14 lg:px-8">
       <div className="section-shell">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="home-scroll-reveal mx-auto max-w-3xl text-center">
           <p className="eyebrow mb-5">Success stories</p>
           <h2 className="font-display text-[clamp(2.2rem,4vw,4rem)] font-extrabold text-[#123B6D]">
             What students are saying
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="home-scroll-reveal home-scroll-delay-1 mt-12 grid gap-5 md:grid-cols-3">
           {testimonials.map((item) => (
             <article key={item.name} className="soft-card group relative flex min-h-[380px] flex-col justify-between overflow-hidden p-6">
               <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#1976D2] to-[#38BDF8]" />
@@ -69,7 +69,7 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 rounded-xl bg-[#0F2E59] px-5 py-5 text-center text-white md:flex-row md:text-left">
+        <div className="home-scroll-reveal mt-12 flex flex-col items-center justify-between gap-4 rounded-xl bg-[#0F2E59] px-5 py-5 text-center text-white md:flex-row md:text-left">
           <p className="text-xl font-medium text-white">
             Join the <span className="text-[#38BDF8]">tnpLab</span> training experience and take the next step.
           </p>

@@ -15,16 +15,16 @@ const featureCards = [
 
 export default function WhyTnpLab() {
   return (
-    <section id="why" className="relative px-4 py-20 sm:px-6 lg:px-8">
+    <section id="why" className="relative px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-14 lg:px-8">
       <div className="section-shell">
-        <div className="mb-12 max-w-3xl">
+        <div className="home-scroll-reveal mb-12 max-w-3xl">
           <p className="eyebrow mb-5">Why tnpLab</p>
           <h2 className="font-display text-[clamp(2.3rem,4vw,4.2rem)] font-extrabold text-[#123B6D]">
             Professional mentoring with measurable outcomes.
           </h2>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="home-scroll-reveal home-scroll-delay-1 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="overflow-hidden rounded-xl border border-[#0F2E59] bg-gradient-to-br from-[#123B6D] to-[#0F2E59] p-6 text-white shadow-[0_20px_50px_-30px_rgba(15,46,89,0.65)] sm:p-7">
             <div className="mb-6 flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -40,9 +40,9 @@ export default function WhyTnpLab() {
             <div className="rounded-xl border border-white/15 bg-[#0F2E59] p-5">
               <div className="flex items-end gap-4">
                 <div className="flex flex-1 items-end justify-center gap-3">
-                  <div className="w-14 rounded-t-lg bg-[#38BDF8]" style={{ height: "72px" }} />
-                  <div className="w-14 rounded-t-lg bg-[#1976D2]" style={{ height: "120px" }} />
-                  <div className="w-14 rounded-t-lg bg-white" style={{ height: "150px" }} />
+                  <div className="home-chart-bar w-14 rounded-t-lg bg-[#38BDF8]" style={{ height: "72px" }} />
+                  <div className="home-chart-bar home-chart-delay-1 w-14 rounded-t-lg bg-[#1976D2]" style={{ height: "120px" }} />
+                  <div className="home-chart-bar home-chart-delay-2 w-14 rounded-t-lg bg-white" style={{ height: "150px" }} />
                 </div>
               </div>
             </div>

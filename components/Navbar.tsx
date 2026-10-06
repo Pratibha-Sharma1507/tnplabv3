@@ -17,28 +17,28 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0F2E59]/95 backdrop-blur-xl">
-      <nav className="section-shell flex items-center justify-between py-3.5">
-        <Link href="#home" className="flex items-center gap-3" aria-label="tnpLab home">
+      <nav className="section-shell flex min-h-[4.5rem] items-center justify-between gap-4 py-3">
+        <Link href="#home" className="flex min-w-0 items-center gap-3" aria-label="tnpLab home">
           <Image
             src="/tnplablogo.6e39ec8f.svg"
             alt="tnpLab"
             width={1572}
             height={621}
             priority
-            className="h-12 w-auto"
+            className="h-10 w-auto sm:h-11"
           />
         </Link>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <ul className="flex items-center gap-5 lg:gap-7">
+        <div className="hidden items-center gap-4 lg:gap-6 md:flex">
+          <ul className="flex items-center gap-4 lg:gap-6">
             {links.map((link) => (
               <li key={link.href}>
                 {link.href.startsWith("/") ? (
-                  <Link href={link.href} className="text-sm font-medium text-slate-200 transition-colors hover:text-white">
+                    <Link href={link.href} className="whitespace-nowrap text-[0.82rem] font-medium text-slate-200 transition-colors hover:text-white">
                     {link.label}
                   </Link>
                 ) : (
-                  <a href={link.href} className="text-sm font-medium text-slate-200 transition-colors hover:text-white">
+                  <a href={link.href} className="whitespace-nowrap text-[0.82rem] font-medium text-slate-200 transition-colors hover:text-white">
                     {link.label}
                   </a>
                 )}

@@ -83,9 +83,9 @@ const trainingTracks = [
 
 export default function TnpLabTraining() {
   return (
-    <section className="relative px-4 pb-20 pt-16 sm:px-6 lg:px-8">
+    <section className="relative px-4 pb-14 pt-16 sm:px-6 sm:pb-16 lg:px-8">
       <div className="section-shell">
-        <div className="mx-auto mb-10 max-w-3xl text-center">
+        <div className="home-scroll-reveal mx-auto mb-10 max-w-3xl text-center">
           <p className="eyebrow mb-5">Programs</p>
           <h2 className="font-display text-[clamp(2.3rem,4vw,4.2rem)] font-extrabold text-[#123B6D]">
             Career-focused learning tracks
@@ -95,7 +95,7 @@ export default function TnpLabTraining() {
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="home-scroll-reveal home-scroll-delay-1 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {trainingTracks.map((track, index) => (
             <article key={track.title} className="soft-card group relative flex flex-col overflow-hidden">
               <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#1976D2] to-[#38BDF8]" />

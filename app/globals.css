@@ -77,7 +77,7 @@ html {
 
 body {
   background:
-    radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.08), transparent 30%),
+    radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.045), transparent 32%),
     linear-gradient(180deg, var(--theme-page) 0%, var(--theme-page) 100%);
   color: var(--theme-strong);
   transition: background-color 180ms ease, color 180ms ease;
@@ -88,15 +88,144 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(rgba(18, 59, 109, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(18, 59, 109, 0.025) 1px, transparent 1px);
-  background-size: 24px 24px;
-  mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
+  background-image: linear-gradient(rgba(18, 59, 109, 0.016) 1px, transparent 1px), linear-gradient(90deg, rgba(18, 59, 109, 0.016) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(circle at center, black 25%, transparent 90%);
 }
 
 .theme-hero {
   background:
     radial-gradient(circle at 78% 0%, rgba(56, 189, 248, 0.16), transparent 36%),
     linear-gradient(125deg, #0f2e59 0%, #123b6d 62%, #0f2e59 100%);
+}
+
+.hero-blueprint {
+  background-image:
+    linear-gradient(rgba(186, 230, 253, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(186, 230, 253, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 62% 92% at 84% 48%, black 8%, transparent 100%);
+  opacity: 0.7;
+}
+
+@keyframes home-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-enter {
+  animation: home-enter 650ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.home-enter-delay-1 {
+  animation-delay: 70ms;
+}
+
+.home-enter-delay-2 {
+  animation-delay: 130ms;
+}
+
+.home-enter-delay-3 {
+  animation-delay: 190ms;
+}
+
+.home-enter-delay-4 {
+  animation-delay: 250ms;
+}
+
+@keyframes hero-title-reveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    clip-path: inset(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title-line {
+  display: inline-block;
+  animation: hero-title-reveal 850ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-title-line-delay {
+  animation-delay: 140ms;
+}
+
+@keyframes hero-form-enter {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-form-enter {
+  animation: hero-form-enter 760ms cubic-bezier(0.2, 0.7, 0.2, 1) 180ms both;
+}
+
+@keyframes home-scroll-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .home-scroll-reveal {
+    animation: home-scroll-enter linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 28%;
+  }
+
+  .home-scroll-delay-1 {
+    animation-range: entry 5% entry 34%;
+  }
+
+  @keyframes home-chart-rise {
+    from {
+      opacity: 0.35;
+      transform: scaleY(0.12);
+    }
+
+    to {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+
+  .home-chart-bar {
+    animation: home-chart-rise 800ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+    transform-origin: bottom;
+  }
+
+  .home-chart-delay-1 {
+    animation-delay: 120ms;
+  }
+
+  .home-chart-delay-2 {
+    animation-delay: 240ms;
+  }
 }
 
 .theme-switcher {
@@ -155,12 +284,20 @@ body::before {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+
+  .home-enter,
+  .hero-title-line,
+  .hero-form-enter,
+  .home-scroll-reveal,
+  .home-chart-bar {
+    animation: none !important;
+  }
 }
 
 .grain-overlay {
-  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
-  background-size: 18px 18px;
-  opacity: 0.45;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.025) 1px, transparent 0);
+  background-size: 24px 24px;
+  opacity: 0.24;
 }
 
 @layer components {
@@ -189,7 +326,7 @@ body::before {
   }
 
   .input {
-    @apply w-full rounded-lg border border-[#E2E8F0] bg-white px-4 py-3 text-sm text-[#172033] outline-none transition-all duration-200 placeholder:text-slate-500 focus:border-[#1976D2] focus:ring-2 focus:ring-sky-100;
+    @apply w-full rounded-xl border border-[#E2E8F0] bg-white px-4 py-3 text-sm text-[#172033] outline-none transition-all duration-200 placeholder:text-slate-500 focus:border-[#1976D2] focus:ring-2 focus:ring-sky-100;
   }
 
   .input-light {
